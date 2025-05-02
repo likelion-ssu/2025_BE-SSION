@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from user import views as userviews
+from article import views as articleviews
+from following import views as followingviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('signup/', userviews.signUp),
+    path('login/', userviews.login),
+    path('edit-profile/', userviews.editProfile),
+    path('write/', articleviews.write),
+    path('edit/', articleviews.edit),
+    path('follow-request/', followingviews.followRequest),
+    path('follow-accept/', followingviews.followAccept),
+    path('follow-ignore/', followingviews.followIgnore),
+    path('follow-find/', followingviews.findFollow),
 ]
