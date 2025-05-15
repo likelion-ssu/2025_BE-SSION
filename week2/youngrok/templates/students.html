@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 정보</title>
+</head>
+<body>
+    <h1>학생 목록</h1>
+    {% if students %}
+        <ul>
+        {% for student in students %}
+            <li>
+                이름: {{ student.name }}<br>
+                학번: {{ student.student_number }}<br>
+                성적: {{ student.grade }}<br>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>데이터가 없습니다.</p>
+    {% endif %}
+</body>
+</html>
